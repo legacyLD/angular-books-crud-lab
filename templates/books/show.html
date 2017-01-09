@@ -1,10 +1,40 @@
-<h2>{{booksShowCtrl.book.title}}</h2>
+{{booksShowCtrl.books.title}}</h2>
 <hr>
 <div class="row">
-	<!-- Here, add the display of the book info,
-       the buttons for editing or deleting,
-       the form and buttons that will show if you
-       click edit. Don't forget that all of those
-       buttons and forms will need some angular
-       functionality! -->
+  <div>
+      <hr>
+      <div class="col-xs-12">
+          <img src="{{booksShowCtrl.books.image}}" class="img-responsive col-xs-6">
+          <div class="img-responsive col-xs-6">
+
+              <h3><a href="/books/{{booksShowCtrl.books._id}}">{{book.title}}</a></h3>
+              <h4>{{booksShowCtrl.books.author}}</h4>
+              <h5>{{booksShowCtrl.books.releaseDate}}</h5>
+              <hr>
+
+              <form>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-xs btn-success" ng-show="editing" ng-click="booksShowCtrl.bookUpdate(book); editing=false">Submit</button>
+                  <button type="submit" class="btn btn-xs btn-warning" ng-show="editing" ng-click="booksShowCtrl.vm.bookShow(); editing=false">Cancel</button>
+                  <div ng-hide="editing">
+                    <button class="btn btn-xs btn-warning" ng-click="editing=true">Edit</button>
+                    <button class="btn btn-xs btn-danger" ng-click="booksShowCtrl.bookDelete(book)">Delete</button>
+                  </div>
+                </div>
+                <div class="form-group" ng-show="editing">
+                    <input class="form-control" type="text" name="" placeholder="title">
+                </div>
+                <div class="form-group" ng-show="editing">
+                    <input class="form-control" type="text" name="" placeholder="author">
+                </div>
+              </form>
+
+          </div>
+          <div>
+          </div>
+      </div>
+      <div class="col-xs-12">
+          </br>
+      </div>
+  </div>
 </div>

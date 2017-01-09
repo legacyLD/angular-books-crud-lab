@@ -5,3 +5,17 @@
   Make sure you display an image, the title, and the author.
   The title should be a link to the specific book view.
 </div> -->
+<div ng-repeat="book in booksIndexCtrl.books">
+    <hr>
+    <div class="col-xs-12">
+        <img src="{{book.image}}" class="img-responsive col-xs-6">
+        <div class="img-responsive col-xs-6">
+            <h3><a href="/books/{{book._id}}">{{book.title}}</a></h3>
+            <h4>{{book.author}}</h4>
+            <h5>{{book.releaseDate}}</h5>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        </br>
+    </div>
+</div>
